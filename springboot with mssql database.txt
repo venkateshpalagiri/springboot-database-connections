@@ -1,0 +1,28 @@
+springboot with mssql database:
+
+1. pom.xml
+this is the least dependency that was added
+
+<dependency>
+
+starter web
+data jpa
+mssql-jdbc
+lombok
+starter test
+
+</dependency>
+
+2. application.properties file configuration
+
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.url=jdbc:sqlserver://localhost:1433;DatabaseName=test;encrypt=true;trustServerCertificate=true;
+spring.datasource.username=tomy
+spring.datasource.password=tomy
+
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.SQLServer2012Dialect
+spring.jpa.hibernate.ddl-auto= update
+
+3. references
+
+https://stackoverflow.com/a/53377246
