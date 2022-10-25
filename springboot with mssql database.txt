@@ -16,12 +16,22 @@ starter test
 2. application.properties file configuration
 
 spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+#the bottom one doesn't work, don't know why
+#spring.datasource.url=jdbc:sqlserver://localhost;databaseName=db
+
 spring.datasource.url=jdbc:sqlserver://localhost:1433;DatabaseName=test;encrypt=true;trustServerCertificate=true;
+#**********************************(OR)*********************************
+spring.datasource.url: jdbc:sqlserver://${DB_HOST:localhost}:1433;DatabaseName=productdb;encrypt=true;trustServerCertificate=true;
+#**********************************(OR)*********************************
+spring.datasource.url: jdbc:sqlserver://${DB_HOST:localhost};DatabaseName=productdb;encrypt=true;trustServerCertificate=true;
+
 spring.datasource.username=tomy
 spring.datasource.password=tomy
 
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.SQLServer2012Dialect
 spring.jpa.hibernate.ddl-auto= update
+
 
 3. references
 
